@@ -1,0 +1,139 @@
+<!--
+CSS Media queries are a way to target browser by certain characteristics, features
+and user preferences , then apply styles or run other codes based on things.
+
+Anatomy of Media Query
+@media (At Rule)
+
+Media Type - target
+- Screen (matches devices with the screen)
+- all (matches all devices)
+- print (matches documents that are viewed in a print preview)
+- speech (matches devices that read the content audibly for eg: screenreaders)
+
+Media Features: 
+viewport/Page Characteristics
+min-width , max-width ,width, height, orientation, overflow-block,
+overflow-inline, aspect-ratio,
+
+Display Quality
+resolution,scan,grid,update,display-mode
+
+Color
+color, color-index, monochrome,color-gamut,dynamic-range, inverted colors
+
+Interaction
+pointer, hover, any-pointer, any-hover
+
+Video-prefixed
+video-color-gamut, video-dynamic-range, video-width, video-height, video-resolution
+
+Scripting
+scripting
+
+User Preferences
+prefers-reduced-motion,prefers-reduced-transperency, prefers-contrast, prefers-color-scheme,
+forced-colors, prefers-reduced-data
+ 
+Operators
+and, or , not
+-->
+<!--<html>
+    <head>
+        <style>
+            body{         
+                background-color:#862727;
+            }
+            @media (min-width: 30em) and(max-width:80em) {
+            body{
+                background-color:purple;
+            }}
+        </style>
+    </head>
+<body>
+    
+</body>
+</html>
+-->
+<html>
+<head>
+    <style>
+
+        ul{
+            list-style-type:none
+        }
+
+        ul li a{
+            color:green;
+            text-decoration: none;
+            padding:3px;
+            display: block;
+        }
+
+
+        .container{
+            margin: 0,auto;
+            background:#ceceff;
+            box-sizing: border-box;
+        }
+    @media screen and (max-width:767px) {
+        .container{
+            width:100%;
+            padding:5px 10px
+        }
+    }
+
+    @media screen and (min-width:520px) and (max-width:699px) {
+        ul li a{
+            
+            padding-left:30px;
+            background: url("email-icon.png") left center no-repeat;
+        }
+    }
+
+    @media screen and (min-width:768px) and (max-width:1023px) {
+        .container{
+            width:750px;
+            padding:5px 15px;
+            background: #c47846;
+        }
+    }
+    @media screen  and (max-width:1024px) {
+        .container{
+            width:980px;
+            padding:5px 20px;
+            background: #c41846;
+        }
+    }
+
+    </style>
+</head>
+<!--
+    <body>
+    <div class="container">
+        <div class="column">
+            <p>
+                A series of elements conforming a visual language have evolved to represent information stored in computers. This makes it easier for people with few computer skills to work with and use computer software. The most common combination of such elements in GUIs is the windows, icons, text fields, canvases, menus, pointer (WIMP) paradigm, especially in personal computers.[15]
+            </p>
+        </div>
+        <div class="column">
+            <p>
+                The WIMP style of interaction uses a virtual input device to represent the position of a pointing device's interface, most often a mouse, and presents information organized in windows and represented with icons. Available commands are compiled together in menus, and actions are performed making gestures with the pointing device. A window manager facilitates the interactions between windows, applications, and the windowing system. The windowing system handles hardware devices such as pointing devices, graphics hardware, and positioning of the pointer.
+            </p>
+        </div>
+    </div>
+
+</body>
+-->
+
+<body>
+    <h1>Resize the browser windwo to see the effect</h1>
+    <ul>
+        <li> <a data-email="parag@gmail.com" href="mailto:parag@gmail.com"> Parag Joshi </a></li>
+            
+        <li> <a data-email="prachi@gmail.com" href="mailto:prachi@gmail.com"> Prachi Joshi </a></li>
+        <li> <a  data-email="daesha@gmail.com" href="mailto:daesha@gmail.com"> Daesha Joshi </a></li>
+        
+    </ul>
+</body>
+</html>
