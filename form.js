@@ -1,13 +1,23 @@
-function Form({setTodos}){
+function Form({todos,setTodos}){
+    
     const handleSubmit = (event)=>{
+        //localStorage.setItem("counter",0)
         event.preventDefault();
         const value = event.target.todo.value;
+        const newTodo = {
+            title:value,
+            id:todos.length+1,
+            is_completed:false
+        }
         setTodos((prevTodos)=>[
             ...prevTodos,
-            {title:value,id:prevTodos.length+1,is_completed:false}
+            newTodo
        ])
+       
+       const updatedTodoList = JSON.stringify([...todos,newTodo])
+       localStorage.setItem("todos",updatedTodoList)
         event.target.reset();
-    };
+    }
     return(
         <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="todo">

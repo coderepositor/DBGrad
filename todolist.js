@@ -5,7 +5,7 @@ function TODOList({ todos, setTodos }) {
       <ol className="todo_list">
         {todos && todos.length > 0 ? (
           todos?.map((item, index) => (
-            <Item key={index} item={item} setTodos={setTodos} />
+            <Item key={index} item={item} setTodos={setTodos} todos={todos}/>
           ))
         ) : (
           <p>Seems No Tasks in the todolist, what are you up to?</p>
@@ -15,7 +15,7 @@ function TODOList({ todos, setTodos }) {
   }
   
     
-  function Item({ item, setTodos }) {
+  function Item({ item, setTodos,todos }) {
     const [editing, setEditing] = React.useState(false);
     const inputRef = React.useRef(null);
     const completeTodo = () => {
@@ -26,7 +26,15 @@ function TODOList({ todos, setTodos }) {
               : todo
           )
         );
+
+        const updatedTodos = JSON.stringify(todos)
+        localStorage.setItem("todos",updatedTodos);
       };
+    const handleDelete = ()=>{
+        setTodos((prevTodos)=>prevTodos.filter((todo)=>todo.id!==item.id));
+        const updatedTodos = JSON.stringify(todos.filter((todo)=>todo.id!==item.id));
+      localStorage.setItem("todos",updatedTodos)
+    } 
     const handleEdit = () => {
       setEditing(true);
     };
@@ -42,9 +50,13 @@ function TODOList({ todos, setTodos }) {
     }, [editing]);
     const handleInpuSubmit = (event) => {
       event.preventDefault();
+      const updatedTodos = JSON.stringify(todos)
+      localStorage.setItem("todos",updatedTodos)
       setEditing(false);
     };
     const handleInputBlur = () => {
+      const updatedTodos = JSON.stringify(todos)
+      localStorage.setItem("todos",updatedTodos)
       setEditing(false);
     };
 
@@ -72,11 +84,11 @@ function TODOList({ todos, setTodos }) {
         ) : (
             
             <div className="todo_items_left">
-            <input type="Checkbox" onClick={completeTodo}/>
+            <input type="Checkbox" checked={item?.is_completed} onClick={completeTodo}/>
             <p>{item?.title}</p>  
             <div className="todo_items_right">
             &nbsp;&nbsp;&nbsp;&nbsp;<button onClick={handleEdit}>Edit</button>&nbsp;&nbsp;
-              <button>Delete</button>
+              <button onClick={handleDelete}>Delete</button>
             </div>
             </div>
         )}
