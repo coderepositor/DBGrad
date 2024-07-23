@@ -1,0 +1,38 @@
+Task 1: Use map to convert an array of numbers into an array of their cubes.
+Write a JavaScript function that takes an array of numbers as input and returns a new array containing the cubes of each number.
+
+Task 2: Use reduce to find the sum of all elements in an array.
+Write a JavaScript function that takes an array of numbers as input and returns the sum of all elements.
+
+Task 3: Use filter to find all prime numbers in an array.
+Write a JavaScript function that takes an array of numbers as input and returns a new array containing only the prime numbers.
+
+Task 4: Use map, reduce, and filter to calculate the average of squared odd numbers in an array.
+Write a JavaScript function that takes an array of numbers as input and calculates the average of the squares of all odd numbers in the array.
+
+Task 5: Use map, reduce, and filter to find the longest string in an array of strings.
+Write a JavaScript function that takes an array of strings as input and returns the longest string from the array.
+
+Task 6: Use map to capitalize the first letter of each word in a sentence.
+Write a JavaScript function that takes a sentence as input and returns the sentence with the first letter of each word capitalized.
+
+Task 7: Use filter to find all students who passed the exam.
+Write a JavaScript function that takes an array of student objects (with properties name and score) as input and returns an array containing only the students who passed the exam (scored 60 or above).
+
+Task 8: Create a Private Counter for Multiple Instances
+Write a closure-based function that creates multiple instances of a private counter. Each instance should have its own count, independent of the others. For example:
+
+const counter1 = createInstanceCounter();
+const counter2 = createInstanceCounter();
+
+console.log(counter1()); // Output: 1
+console.log(counter1()); // Output: 2
+console.log(counter2()); // Output: 1
+console.log(counter2()); // Output: 2
+
+Task 9: Create a Promise-Based Calculator
+Write a Promise-based calculator that takes two numbers and an operation (addition, subtraction, multiplication, or division) as input. Perform the corresponding operation and resolve the Promise with the result. Handle division by zero and any invalid operations by rejecting the Promise with an appropriate error message.
+
+
+Task 10: Calculate Total Score
+Write a JavaScript function that takes an array of objects, where each object contains a property score, and uses the forEach method to calculate the total score of all the objects in the array. Return the total score as the output.
